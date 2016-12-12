@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_Videotheque_Waremme" Class="BDVideothequeBManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-IQTHKHPT\SQLEXPRESS;Initial Catalog=BD_Videotheque_Waremme;Integrated Security=True;Pooling=False" SettingsObjectName="FilmDBManagement.Properties.Settings" SettingsPropertyName="BD_Videotheque_WaremmeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BDB_Film" Member="BDB_Films">
+    <Type Name="BDB_Film">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="original_title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="runtime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="posterpath" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="BDB_Film_BDB_FilmGenre" Member="BDB_FilmGenres" ThisKey="ID" OtherKey="IDFilm" Type="BDB_FilmGenre" />
+      <Association Name="BDB_Film_BDB_FilmRealisateur" Member="BDB_FilmRealisateurs" ThisKey="ID" OtherKey="IDFilm" Type="BDB_FilmRealisateur" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BDB_FilmGenre" Member="BDB_FilmGenres">
+    <Type Name="BDB_FilmGenre">
+      <Column Name="IDFilm" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGenre" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="BDB_Film_BDB_FilmGenre" Member="BDB_Film" ThisKey="IDFilm" OtherKey="ID" Type="BDB_Film" IsForeignKey="true" />
+      <Association Name="BDB_Genre_BDB_FilmGenre" Member="BDB_Genre" ThisKey="IDGenre" OtherKey="Id" Type="BDB_Genre" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BDB_Genre" Member="BDB_Genres">
+    <Type Name="BDB_Genre">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="BDB_Genre_BDB_FilmGenre" Member="BDB_FilmGenres" ThisKey="Id" OtherKey="IDGenre" Type="BDB_FilmGenre" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BDB_News" Member="BDB_News">
+    <Type Name="BDB_New">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Titre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Contenu" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BDB_FilmRealisateur" Member="BDB_FilmRealisateurs">
+    <Type Name="BDB_FilmRealisateur">
+      <Column Name="IDFilm" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDReal" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="BDB_Film_BDB_FilmRealisateur" Member="BDB_Film" ThisKey="IDFilm" OtherKey="ID" Type="BDB_Film" IsForeignKey="true" />
+      <Association Name="BDB_Realisateur_BDB_FilmRealisateur" Member="BDB_Realisateur" ThisKey="IDReal" OtherKey="Id" Type="BDB_Realisateur" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BDB_Realisateur" Member="BDB_Realisateurs">
+    <Type Name="BDB_Realisateur">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="BDB_Realisateur_BDB_FilmRealisateur" Member="BDB_FilmRealisateurs" ThisKey="Id" OtherKey="IDReal" Type="BDB_FilmRealisateur" />
+    </Type>
+  </Table>
+</Database>

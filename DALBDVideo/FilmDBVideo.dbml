@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_Videotheque_Liege" Class="FilmDBVideoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-IQTHKHPT\SQLEXPRESS;Initial Catalog=BD_Videotheque_Liege;Integrated Security=True" SettingsObjectName="DALBDVideo.Properties.Settings" SettingsPropertyName="BD_Videotheque_LiegeConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BD_Actor" Member="BD_Actors">
+    <Type Name="BD_Actor">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="BD_Actor_BD_FilmActor" Member="BD_FilmActors" ThisKey="ID" OtherKey="IDActor" Type="BD_FilmActor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BD_Film" Member="BD_Films">
+    <Type Name="BD_Film">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="original_title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="runtime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="posterpath" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BD_Film_BD_FilmActor" Member="BD_FilmActors" ThisKey="ID" OtherKey="IDFilm" Type="BD_FilmActor" />
+      <Association Name="BD_Film_BD_FilmGenre" Member="BD_FilmGenres" ThisKey="ID" OtherKey="IDFilm" Type="BD_FilmGenre" />
+      <Association Name="BD_Film_BD_FilmRealisateur" Member="BD_FilmRealisateurs" ThisKey="ID" OtherKey="IDFilm" Type="BD_FilmRealisateur" />
+      <Association Name="BD_STATUT_BD_Film" Member="BD_STATUT" ThisKey="status" OtherKey="ID" Type="BD_STATUT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BD_FilmActor" Member="BD_FilmActors">
+    <Type Name="BD_FilmActor">
+      <Column Name="IDFilm" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDActor" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="BD_Actor_BD_FilmActor" Member="BD_Actor" ThisKey="IDActor" OtherKey="ID" Type="BD_Actor" IsForeignKey="true" />
+      <Association Name="BD_Film_BD_FilmActor" Member="BD_Film" ThisKey="IDFilm" OtherKey="ID" Type="BD_Film" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BD_FilmGenre" Member="BD_FilmGenres">
+    <Type Name="BD_FilmGenre">
+      <Column Name="IDFilm" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDGenre" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="BD_Film_BD_FilmGenre" Member="BD_Film" ThisKey="IDFilm" OtherKey="ID" Type="BD_Film" IsForeignKey="true" />
+      <Association Name="BD_Genre_BD_FilmGenre" Member="BD_Genre" ThisKey="IDGenre" OtherKey="Id" Type="BD_Genre" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BD_FilmRealisateur" Member="BD_FilmRealisateurs">
+    <Type Name="BD_FilmRealisateur">
+      <Column Name="IDFilm" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDReal" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="BD_Film_BD_FilmRealisateur" Member="BD_Film" ThisKey="IDFilm" OtherKey="ID" Type="BD_Film" IsForeignKey="true" />
+      <Association Name="BD_Realisateur_BD_FilmRealisateur" Member="BD_Realisateur" ThisKey="IDReal" OtherKey="Id" Type="BD_Realisateur" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BD_Genre" Member="BD_Genres">
+    <Type Name="BD_Genre">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="BD_Genre_BD_FilmGenre" Member="BD_FilmGenres" ThisKey="Id" OtherKey="IDGenre" Type="BD_FilmGenre" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BD_News" Member="BD_News">
+    <Type Name="BD_New">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Titre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Contenu" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BD_Realisateur" Member="BD_Realisateurs">
+    <Type Name="BD_Realisateur">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="BD_Realisateur_BD_FilmRealisateur" Member="BD_FilmRealisateurs" ThisKey="Id" OtherKey="IDReal" Type="BD_FilmRealisateur" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BD_STATUT" Member="BD_STATUTs">
+    <Type Name="BD_STATUT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="BD_STATUT_BD_Film" Member="BD_Films" ThisKey="ID" OtherKey="status" Type="BD_Film" />
+    </Type>
+  </Table>
+</Database>

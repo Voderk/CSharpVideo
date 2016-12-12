@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SmartWCFService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:65522/SmartWCFService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:65522/SmartWCFService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:65522/SmartWCFService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SmartWCFService" />
+      <xsd:import schemaLocation="http://localhost:65522/SmartWCFService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DTOFilm" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISmartWCFService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectAllActeur_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllActeur" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectAllActeur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllActeurResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectAllFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllFilm" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectAllFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllFilmResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectAllRealisateur_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllRealisateur" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectAllRealisateur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllRealisateurResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectAllGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllGenre" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectAllGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllGenreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectFilmID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFilmID" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectFilmID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFilmIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectFilmTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFilmTitle" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectFilmTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFilmTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectActeurID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectActeurID" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectActeurID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectActeurIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectActeurName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectActeurName" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectActeurName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectActeurNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectRealisateurID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectRealisateurID" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectRealisateurID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectRealisateurIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectRealisateurName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectRealisateurName" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectRealisateurName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectRealisateurNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectGenreID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectGenreID" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectGenreID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectGenreIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectGenreName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectGenreName" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectGenreName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectGenreNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectFilmPerActor_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFilmPerActor" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectFilmPerActor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFilmPerActorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectFilmPerRealisateur_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFilmPerRealisateur" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectFilmPerRealisateur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFilmPerRealisateurResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectFilmPerGenre_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFilmPerGenre" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectFilmPerGenre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectFilmPerGenreResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISmartWCFService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetData" message="tns:ISmartWCFService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetDataResponse" message="tns:ISmartWCFService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetDataUsingDataContract" message="tns:ISmartWCFService_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetDataUsingDataContractResponse" message="tns:ISmartWCFService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllActeur">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectAllActeur" message="tns:ISmartWCFService_SelectAllActeur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectAllActeurResponse" message="tns:ISmartWCFService_SelectAllActeur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectAllFilm" message="tns:ISmartWCFService_SelectAllFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectAllFilmResponse" message="tns:ISmartWCFService_SelectAllFilm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllRealisateur">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectAllRealisateur" message="tns:ISmartWCFService_SelectAllRealisateur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectAllRealisateurResponse" message="tns:ISmartWCFService_SelectAllRealisateur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectAllGenre" message="tns:ISmartWCFService_SelectAllGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectAllGenreResponse" message="tns:ISmartWCFService_SelectAllGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFilmID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmID" message="tns:ISmartWCFService_SelectFilmID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmIDResponse" message="tns:ISmartWCFService_SelectFilmID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFilmTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmTitle" message="tns:ISmartWCFService_SelectFilmTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmTitleResponse" message="tns:ISmartWCFService_SelectFilmTitle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectActeurID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectActeurID" message="tns:ISmartWCFService_SelectActeurID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectActeurIDResponse" message="tns:ISmartWCFService_SelectActeurID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectActeurName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectActeurName" message="tns:ISmartWCFService_SelectActeurName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectActeurNameResponse" message="tns:ISmartWCFService_SelectActeurName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectRealisateurID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectRealisateurID" message="tns:ISmartWCFService_SelectRealisateurID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectRealisateurIDResponse" message="tns:ISmartWCFService_SelectRealisateurID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectRealisateurName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectRealisateurName" message="tns:ISmartWCFService_SelectRealisateurName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectRealisateurNameResponse" message="tns:ISmartWCFService_SelectRealisateurName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectGenreID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectGenreID" message="tns:ISmartWCFService_SelectGenreID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectGenreIDResponse" message="tns:ISmartWCFService_SelectGenreID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectGenreName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectGenreName" message="tns:ISmartWCFService_SelectGenreName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectGenreNameResponse" message="tns:ISmartWCFService_SelectGenreName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFilmPerActor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmPerActor" message="tns:ISmartWCFService_SelectFilmPerActor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmPerActorResponse" message="tns:ISmartWCFService_SelectFilmPerActor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFilmPerRealisateur">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmPerRealisateur" message="tns:ISmartWCFService_SelectFilmPerRealisateur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmPerRealisateurResponse" message="tns:ISmartWCFService_SelectFilmPerRealisateur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectFilmPerGenre">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmPerGenre" message="tns:ISmartWCFService_SelectFilmPerGenre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmPerGenreResponse" message="tns:ISmartWCFService_SelectFilmPerGenre_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISmartWCFService" type="tns:ISmartWCFService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllActeur">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectAllActeur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllFilm">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectAllFilm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllRealisateur">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectAllRealisateur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllGenre">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectAllGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFilmID">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectFilmID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFilmTitle">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectFilmTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectActeurID">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectActeurID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectActeurName">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectActeurName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectRealisateurID">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectRealisateurID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectRealisateurName">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectRealisateurName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectGenreID">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectGenreID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectGenreName">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectGenreName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFilmPerActor">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectFilmPerActor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFilmPerRealisateur">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectFilmPerRealisateur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectFilmPerGenre">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectFilmPerGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SmartWCFService">
+    <wsdl:port name="BasicHttpBinding_ISmartWCFService" binding="tns:BasicHttpBinding_ISmartWCFService">
+      <soap:address location="http://localhost:65522/SmartWCFService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

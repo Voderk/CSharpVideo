@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7b8ccc05-6d83-4053-b785-9696a9d3bed4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:65522/SmartWCFService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SmartWCFService.xsd" MetadataType="Schema" ID="6fd0bb3a-8297-4c7f-810d-ad41af0037ae" SourceId="1" SourceUrl="http://localhost:65522/SmartWCFService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SmartWCFService1.xsd" MetadataType="Schema" ID="bada976c-30da-49e7-9a41-b5068ac2d670" SourceId="1" SourceUrl="http://localhost:65522/SmartWCFService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SmartWCFService.disco" MetadataType="Disco" ID="a6e2d97b-ec18-4890-a5b2-9d4a1844e0a8" SourceId="1" SourceUrl="http://localhost:65522/SmartWCFService.svc?disco" />
+    <MetadataFile FileName="SmartWCFService.wsdl" MetadataType="Wsdl" ID="8cb60a5b-c7c3-463c-864c-91ab6beff9df" SourceId="1" SourceUrl="http://localhost:65522/SmartWCFService.svc?wsdl" />
+    <MetadataFile FileName="SmartWCFService2.xsd" MetadataType="Schema" ID="25d59aee-d7a6-45af-91c6-52b2334ffe4d" SourceId="1" SourceUrl="http://localhost:65522/SmartWCFService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SmartWCFService3.xsd" MetadataType="Schema" ID="ae556be1-bc86-43f7-8285-54ab9820ba8a" SourceId="1" SourceUrl="http://localhost:65522/SmartWCFService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

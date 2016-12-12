@@ -1,0 +1,26 @@
+﻿<Window x:Name="Smart_Vidéo" x:Class="SmartVideo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SmartVideo"
+        mc:Ignorable="d"
+        Title="Smart Vidéo" Height="560.078" Width="1083.029">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,24,14">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.369"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <DataGrid x:Name="FilmDataGridView" Margin="10,30,0,66" CanUserReorderColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" Width="578"/>
+        <ToolBar x:Name="toolBar" VerticalAlignment="Top" Height="30" Margin="0,0,0.4,0">
+            <Button x:Name="button2" Content="News" Height="25.6" VerticalAlignment="Top" Width="75"/>
+        </ToolBar>
+        <Button x:Name="DetailMovieButton" Content="Afficher les détails du film" HorizontalAlignment="Right" Margin="0,0,561,21" VerticalAlignment="Bottom" Width="144" Height="23"/>
+        <Button x:Name="LocationButton" Content="Louer Film" HorizontalAlignment="Left" Margin="199,0,0,21" VerticalAlignment="Bottom" Width="96" Height="24" Click="LocationButton_Click"/>
+        <DataGrid x:Name="FilmBdLocalDataGrid" Margin="0,30,10,66" HorizontalAlignment="Right" Width="435"/>
+    </Grid>
+</Window>

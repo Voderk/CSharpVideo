@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DTOFilm" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DTOFilm" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfActeurDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActeurDTO" nillable="true" type="tns:ActeurDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActeurDTO" nillable="true" type="tns:ArrayOfActeurDTO" />
+  <xs:complexType name="ActeurDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActeurDTO" nillable="true" type="tns:ActeurDTO" />
+  <xs:complexType name="ArrayOfFilmDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilmDTO" nillable="true" type="tns:FilmDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilmDTO" nillable="true" type="tns:ArrayOfFilmDTO" />
+  <xs:complexType name="FilmDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acteurlist" nillable="true" type="tns:ArrayOfActeurDTO" />
+      <xs:element minOccurs="0" name="Genrelist" nillable="true" type="tns:ArrayOfGenreDTO" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Original_title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Posterpath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Realisateurlist" nillable="true" type="tns:ArrayOfRealisateurDTO" />
+      <xs:element minOccurs="0" name="Runtime" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilmDTO" nillable="true" type="tns:FilmDTO" />
+  <xs:complexType name="ArrayOfGenreDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenreDTO" nillable="true" type="tns:GenreDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenreDTO" nillable="true" type="tns:ArrayOfGenreDTO" />
+  <xs:complexType name="GenreDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenreDTO" nillable="true" type="tns:GenreDTO" />
+  <xs:complexType name="ArrayOfRealisateurDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RealisateurDTO" nillable="true" type="tns:RealisateurDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRealisateurDTO" nillable="true" type="tns:ArrayOfRealisateurDTO" />
+  <xs:complexType name="RealisateurDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RealisateurDTO" nillable="true" type="tns:RealisateurDTO" />
+</xs:schema>
