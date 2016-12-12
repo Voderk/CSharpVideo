@@ -78,6 +78,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SelectSomeMovies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="number" type="xs:int" />
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectSomeMoviesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectSomeMoviesResult" nillable="true" type="q7:ArrayOfFilmDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SelectFilmID">
     <xs:complexType>
       <xs:sequence>
@@ -88,7 +103,7 @@
   <xs:element name="SelectFilmIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectFilmIDResult" nillable="true" type="q7:FilmDTO" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectFilmIDResult" nillable="true" type="q8:FilmDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -102,7 +117,7 @@
   <xs:element name="SelectFilmTitleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectFilmTitleResult" nillable="true" type="q8:FilmDTO" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectFilmTitleResult" nillable="true" type="q9:FilmDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -116,7 +131,7 @@
   <xs:element name="SelectActeurIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectActeurIDResult" nillable="true" type="q9:ActeurDTO" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectActeurIDResult" nillable="true" type="q10:ActeurDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -130,7 +145,7 @@
   <xs:element name="SelectActeurNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectActeurNameResult" nillable="true" type="q10:ActeurDTO" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectActeurNameResult" nillable="true" type="q11:ActeurDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -144,7 +159,7 @@
   <xs:element name="SelectRealisateurIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectRealisateurIDResult" nillable="true" type="q11:RealisateurDTO" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectRealisateurIDResult" nillable="true" type="q12:RealisateurDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -158,7 +173,7 @@
   <xs:element name="SelectRealisateurNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectRealisateurNameResult" nillable="true" type="q12:RealisateurDTO" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectRealisateurNameResult" nillable="true" type="q13:RealisateurDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -172,7 +187,7 @@
   <xs:element name="SelectGenreIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectGenreIDResult" nillable="true" type="q13:GenreDTO" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectGenreIDResult" nillable="true" type="q14:GenreDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -186,49 +201,49 @@
   <xs:element name="SelectGenreNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectGenreNameResult" nillable="true" type="q14:GenreDTO" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectGenreNameResult" nillable="true" type="q15:GenreDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SelectFilmPerActor">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="actor" nillable="true" type="q15:ActeurDTO" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="actor" nillable="true" type="q16:ActeurDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SelectFilmPerActorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectFilmPerActorResult" nillable="true" type="q16:ArrayOfFilmDTO" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectFilmPerActorResult" nillable="true" type="q17:ArrayOfFilmDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SelectFilmPerRealisateur">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="realisator" nillable="true" type="q17:RealisateurDTO" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="realisator" nillable="true" type="q18:RealisateurDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SelectFilmPerRealisateurResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectFilmPerRealisateurResult" nillable="true" type="q18:ArrayOfFilmDTO" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectFilmPerRealisateurResult" nillable="true" type="q19:ArrayOfFilmDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SelectFilmPerGenre">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="genre" nillable="true" type="q19:GenreDTO" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="genre" nillable="true" type="q20:GenreDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SelectFilmPerGenreResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectFilmPerGenreResult" nillable="true" type="q20:ArrayOfFilmDTO" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectFilmPerGenreResult" nillable="true" type="q21:ArrayOfFilmDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

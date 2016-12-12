@@ -28,6 +28,7 @@
       <xs:element minOccurs="0" name="Posterpath" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Realisateurlist" nillable="true" type="tns:ArrayOfRealisateurDTO" />
       <xs:element minOccurs="0" name="Runtime" type="xs:int" />
+      <xs:element minOccurs="0" name="Statut" nillable="true" type="tns:StatutDTO" />
       <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -58,4 +59,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RealisateurDTO" nillable="true" type="tns:RealisateurDTO" />
+  <xs:complexType name="StatutDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatutDTO" nillable="true" type="tns:StatutDTO" />
 </xs:schema>

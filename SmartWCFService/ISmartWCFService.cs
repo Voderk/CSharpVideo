@@ -35,6 +35,9 @@ namespace SmartWCFService
         #endregion
 
         [OperationContract]
+        List<FilmDTO> SelectSomeMovies(int number,int skip);
+
+        [OperationContract]
         FilmDTO SelectFilmID(int idFilm);
 
         [OperationContract]

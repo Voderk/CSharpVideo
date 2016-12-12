@@ -67,6 +67,21 @@ namespace BLLBDVideo
         {
             return DALBDV.SelectGenre(Name);
         }
+
+        public List<FilmDTO> SelectSomeMovies(int number, int skip)
+        {
+            List<FilmDTO> MyMovies = DALBDV.SelectSomeMovies(number, skip);
+            foreach (FilmDTO s in MyMovies)
+            {
+                s.Acteurlist = DALBDV.SelectActeurFilm(s.Id);
+                s.Realisateurlist = DALBDV.SelectRealisateurFilm(s.Id);
+                s.Genrelist = DALBDV.SelectGenreFilm(s.Id);
+            }
+
+            return MyMovies;
+        }
+
+
         #endregion
 
         #region SelectAll

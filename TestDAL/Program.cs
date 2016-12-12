@@ -14,19 +14,26 @@ namespace TestDAL
     {
         static void Main(string[] args)
         {
-            //List<FilmDTO> Films;
+            List<FilmDTO> Films;
 
-            FilmDTO movie;
+            //FilmDTO movie;
 
             DALBDVid DALBDV = DALBDVid.Singleton("LAPTOP-IQTHKHPT\\SQLEXPRESS", "BD_VIDEOTHEQUE_LIEGE");
             //ActeurDTO actor = new ActeurDTO(138, "Quentin Tarantino");
             MySmartWCFService.SmartWCFServiceClient test = new MySmartWCFService.SmartWCFServiceClient();
 
-            movie = test.SelectFilmID(27);
+            Films = test.SelectSomeMovies(50, 2);
 
-            movie.AfficheFilm();
+            //movie.AfficheFilm();
+            int i = 0;
+            foreach(FilmDTO a in Films)
+            {
+                Console.WriteLine(i);
+                a.AfficheFilm();
+                i++;
+            }
 
-            DALBDV.InsertNewFilm(movie);
+            //DALBDV.InsertNewFilm(movie);
 
             Console.ReadKey();
 

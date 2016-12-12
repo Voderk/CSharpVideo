@@ -183,6 +183,30 @@ namespace DALBDVideo
 
             return MyStatut;
         }
+
+        public List<FilmDTO> SelectSomeMovies(int number, int skip)
+        {
+
+            List<FilmDTO> MyMovies = new List<FilmDTO>();
+            FilmDTO temp;
+            var query = ((from d in context.BD_Films
+                        select d).Skip(number*skip)).Take(number);
+
+            foreach (var a in query)
+            {
+                temp = new FilmDTO();
+                temp.Id = a.ID;
+                temp.Title = a.title;
+                temp.Original_title = a.original_title;
+                temp.Runtime = (int)a.runtime;
+                temp.Posterpath = a.posterpath;
+                temp.Statut = SelectStatut((int)a.status);
+                MyMovies.Add(temp);
+            }
+
+            return MyMovies;
+        }
+
         #endregion
 
         #region SelectAll

@@ -114,6 +114,12 @@ namespace TestDAL.MySmartWCFService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectAllGenre", ReplyAction="http://tempuri.org/ISmartWCFService/SelectAllGenreResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.GenreDTO>> SelectAllGenreAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectSomeMovies", ReplyAction="http://tempuri.org/ISmartWCFService/SelectSomeMoviesResponse")]
+        System.Collections.Generic.List<DTOFilm.FilmDTO> SelectSomeMovies(int number, int skip);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectSomeMovies", ReplyAction="http://tempuri.org/ISmartWCFService/SelectSomeMoviesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.FilmDTO>> SelectSomeMoviesAsync(int number, int skip);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectFilmID", ReplyAction="http://tempuri.org/ISmartWCFService/SelectFilmIDResponse")]
         DTOFilm.FilmDTO SelectFilmID(int idFilm);
         
@@ -254,6 +260,14 @@ namespace TestDAL.MySmartWCFService {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.GenreDTO>> SelectAllGenreAsync() {
             return base.Channel.SelectAllGenreAsync();
+        }
+        
+        public System.Collections.Generic.List<DTOFilm.FilmDTO> SelectSomeMovies(int number, int skip) {
+            return base.Channel.SelectSomeMovies(number, skip);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.FilmDTO>> SelectSomeMoviesAsync(int number, int skip) {
+            return base.Channel.SelectSomeMoviesAsync(number, skip);
         }
         
         public DTOFilm.FilmDTO SelectFilmID(int idFilm) {

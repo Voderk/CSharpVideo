@@ -118,5 +118,10 @@ namespace SmartWCFService
         {
             return BLLBDF.SelectFilmPerGenre(genre);
         }
+
+        public List<FilmDTO> SelectSomeMovies(int number, int skip)
+        {
+            return BLLBDF.SelectSomeMovies(number, skip);
+        }
     }
 }
