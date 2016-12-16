@@ -279,6 +279,14 @@ namespace DALBDVideo
 
             return MyActors;
         }
+
+        public int SelectCountFilm()
+        {
+            var query = (from d in context.BD_Films
+                        select d).Count();
+
+            return query;
+        }
         #endregion
 
         #region SelectPerFilm

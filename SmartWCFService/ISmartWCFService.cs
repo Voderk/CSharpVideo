@@ -70,6 +70,9 @@ namespace SmartWCFService
         [OperationContract]
         List<FilmDTO> SelectFilmPerGenre(GenreDTO genre);
 
+        [OperationContract]
+        int SelectCountFilm();
+
 
     }
 

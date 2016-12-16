@@ -123,5 +123,10 @@ namespace SmartWCFService
         {
             return BLLBDF.SelectSomeMovies(number, skip);
         }
+
+        public int SelectCountFilm()
+        {
+            return BLLBDF.SelectCountFilm();
+        }
     }
 }

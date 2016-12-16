@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartVideo.MyWCFService {
+namespace WpfApplication1.MyWCFService {
     using System.Runtime.Serialization;
     using System;
     
@@ -85,10 +85,10 @@ namespace SmartVideo.MyWCFService {
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/ISmartWCFService/GetDataUsingDataContractResponse")]
-        SmartVideo.MyWCFService.CompositeType GetDataUsingDataContract(SmartVideo.MyWCFService.CompositeType composite);
+        WpfApplication1.MyWCFService.CompositeType GetDataUsingDataContract(WpfApplication1.MyWCFService.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/ISmartWCFService/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<SmartVideo.MyWCFService.CompositeType> GetDataUsingDataContractAsync(SmartVideo.MyWCFService.CompositeType composite);
+        System.Threading.Tasks.Task<WpfApplication1.MyWCFService.CompositeType> GetDataUsingDataContractAsync(WpfApplication1.MyWCFService.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectAllActeur", ReplyAction="http://tempuri.org/ISmartWCFService/SelectAllActeurResponse")]
         System.Collections.Generic.List<DTOFilm.ActeurDTO> SelectAllActeur();
@@ -113,6 +113,12 @@ namespace SmartVideo.MyWCFService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectAllGenre", ReplyAction="http://tempuri.org/ISmartWCFService/SelectAllGenreResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.GenreDTO>> SelectAllGenreAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectSomeMovies", ReplyAction="http://tempuri.org/ISmartWCFService/SelectSomeMoviesResponse")]
+        System.Collections.Generic.List<DTOFilm.FilmDTO> SelectSomeMovies(int number, int skip);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectSomeMovies", ReplyAction="http://tempuri.org/ISmartWCFService/SelectSomeMoviesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.FilmDTO>> SelectSomeMoviesAsync(int number, int skip);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectFilmID", ReplyAction="http://tempuri.org/ISmartWCFService/SelectFilmIDResponse")]
         DTOFilm.FilmDTO SelectFilmID(int idFilm);
@@ -179,15 +185,21 @@ namespace SmartVideo.MyWCFService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectFilmPerGenre", ReplyAction="http://tempuri.org/ISmartWCFService/SelectFilmPerGenreResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.FilmDTO>> SelectFilmPerGenreAsync(DTOFilm.GenreDTO genre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectCountFilm", ReplyAction="http://tempuri.org/ISmartWCFService/SelectCountFilmResponse")]
+        int SelectCountFilm();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectCountFilm", ReplyAction="http://tempuri.org/ISmartWCFService/SelectCountFilmResponse")]
+        System.Threading.Tasks.Task<int> SelectCountFilmAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISmartWCFServiceChannel : SmartVideo.MyWCFService.ISmartWCFService, System.ServiceModel.IClientChannel {
+    public interface ISmartWCFServiceChannel : WpfApplication1.MyWCFService.ISmartWCFService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SmartWCFServiceClient : System.ServiceModel.ClientBase<SmartVideo.MyWCFService.ISmartWCFService>, SmartVideo.MyWCFService.ISmartWCFService {
+    public partial class SmartWCFServiceClient : System.ServiceModel.ClientBase<WpfApplication1.MyWCFService.ISmartWCFService>, WpfApplication1.MyWCFService.ISmartWCFService {
         
         public SmartWCFServiceClient() {
         }
@@ -216,11 +228,11 @@ namespace SmartVideo.MyWCFService {
             return base.Channel.GetDataAsync(value);
         }
         
-        public SmartVideo.MyWCFService.CompositeType GetDataUsingDataContract(SmartVideo.MyWCFService.CompositeType composite) {
+        public WpfApplication1.MyWCFService.CompositeType GetDataUsingDataContract(WpfApplication1.MyWCFService.CompositeType composite) {
             return base.Channel.GetDataUsingDataContract(composite);
         }
         
-        public System.Threading.Tasks.Task<SmartVideo.MyWCFService.CompositeType> GetDataUsingDataContractAsync(SmartVideo.MyWCFService.CompositeType composite) {
+        public System.Threading.Tasks.Task<WpfApplication1.MyWCFService.CompositeType> GetDataUsingDataContractAsync(WpfApplication1.MyWCFService.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
@@ -254,6 +266,14 @@ namespace SmartVideo.MyWCFService {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.GenreDTO>> SelectAllGenreAsync() {
             return base.Channel.SelectAllGenreAsync();
+        }
+        
+        public System.Collections.Generic.List<DTOFilm.FilmDTO> SelectSomeMovies(int number, int skip) {
+            return base.Channel.SelectSomeMovies(number, skip);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.FilmDTO>> SelectSomeMoviesAsync(int number, int skip) {
+            return base.Channel.SelectSomeMoviesAsync(number, skip);
         }
         
         public DTOFilm.FilmDTO SelectFilmID(int idFilm) {
@@ -342,6 +362,14 @@ namespace SmartVideo.MyWCFService {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.FilmDTO>> SelectFilmPerGenreAsync(DTOFilm.GenreDTO genre) {
             return base.Channel.SelectFilmPerGenreAsync(genre);
+        }
+        
+        public int SelectCountFilm() {
+            return base.Channel.SelectCountFilm();
+        }
+        
+        public System.Threading.Tasks.Task<int> SelectCountFilmAsync() {
+            return base.Channel.SelectCountFilmAsync();
         }
     }
 }

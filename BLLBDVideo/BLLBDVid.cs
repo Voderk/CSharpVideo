@@ -112,6 +112,12 @@ namespace BLLBDVideo
         {
             return DALBDV.SelectAllActeur();
         }
+
+        public int SelectCountFilm()
+        {
+            return DALBDV.SelectCountFilm();
+        }
+
         #endregion
 
         #region SelectFilmPerCategory

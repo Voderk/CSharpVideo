@@ -44,6 +44,12 @@
   <wsdl:message name="ISmartWCFService_SelectAllGenre_OutputMessage">
     <wsdl:part name="parameters" element="tns:SelectAllGenreResponse" />
   </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectSomeMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectSomeMovies" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectSomeMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectSomeMoviesResponse" />
+  </wsdl:message>
   <wsdl:message name="ISmartWCFService_SelectFilmID_InputMessage">
     <wsdl:part name="parameters" element="tns:SelectFilmID" />
   </wsdl:message>
@@ -110,6 +116,12 @@
   <wsdl:message name="ISmartWCFService_SelectFilmPerGenre_OutputMessage">
     <wsdl:part name="parameters" element="tns:SelectFilmPerGenreResponse" />
   </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectCountFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCountFilm" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_SelectCountFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCountFilmResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISmartWCFService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetData" message="tns:ISmartWCFService_GetData_InputMessage" />
@@ -134,6 +146,10 @@
     <wsdl:operation name="SelectAllGenre">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectAllGenre" message="tns:ISmartWCFService_SelectAllGenre_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectAllGenreResponse" message="tns:ISmartWCFService_SelectAllGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectSomeMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectSomeMovies" message="tns:ISmartWCFService_SelectSomeMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectSomeMoviesResponse" message="tns:ISmartWCFService_SelectSomeMovies_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SelectFilmID">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmID" message="tns:ISmartWCFService_SelectFilmID_InputMessage" />
@@ -178,6 +194,10 @@
     <wsdl:operation name="SelectFilmPerGenre">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmPerGenre" message="tns:ISmartWCFService_SelectFilmPerGenre_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectFilmPerGenreResponse" message="tns:ISmartWCFService_SelectFilmPerGenre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCountFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/SelectCountFilm" message="tns:ISmartWCFService_SelectCountFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/SelectCountFilmResponse" message="tns:ISmartWCFService_SelectCountFilm_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISmartWCFService" type="tns:ISmartWCFService">
@@ -229,6 +249,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectAllGenre">
       <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectAllGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectSomeMovies">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectSomeMovies" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -328,6 +357,15 @@
     </wsdl:operation>
     <wsdl:operation name="SelectFilmPerGenre">
       <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectFilmPerGenre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCountFilm">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/SelectCountFilm" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

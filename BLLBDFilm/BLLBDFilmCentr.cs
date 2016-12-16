@@ -111,6 +111,11 @@ namespace BLLBDFilm
         {
             return DALBDF.SelectAllActeur();
         }
+
+        public int SelectCountFilm()
+        {
+            return DALBDF.SelectCountFilm();
+        }
         #endregion
 
         #region SelectFilmPerCategory

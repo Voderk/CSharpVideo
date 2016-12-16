@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmartVideo"
         mc:Ignorable="d"
-        Title="Smart Vidéo" Height="560.078" Width="1083.029">
-    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,24,14">
+        Title="Smart Vidéo" Height="679.478" Width="910.229">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,1,51,18">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="273*"/>
+            <RowDefinition Height="66*"/>
+            <RowDefinition Height="197*"/>
+            <RowDefinition Height="42*"/>
+        </Grid.RowDefinitions>
         <Grid.RenderTransform>
             <TransformGroup>
                 <ScaleTransform/>
@@ -15,12 +21,37 @@
                 <TranslateTransform/>
             </TransformGroup>
         </Grid.RenderTransform>
-        <DataGrid x:Name="FilmDataGridView" Margin="10,30,0,66" CanUserReorderColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalAlignment="Left" Width="578"/>
-        <ToolBar x:Name="toolBar" VerticalAlignment="Top" Height="30" Margin="0,0,0.4,0">
+        <DataGrid x:Name="FilmDataGridView" Margin="10,57,4,3" CanUserReorderColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionChanged="FilmDataGridView_SelectionChanged" Grid.IsSharedSizeScope="True" Loaded="FilmDataGridView_Loaded" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Titre" Binding="{Binding Title}" />
+                <DataGridTextColumn Header="Titre original" Binding="{Binding Original_title}" />
+                <DataGridTextColumn Header="Durée" Binding="{Binding Runtime}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <ToolBar x:Name="toolBar" VerticalAlignment="Top" Height="30">
             <Button x:Name="button2" Content="News" Height="25.6" VerticalAlignment="Top" Width="75"/>
         </ToolBar>
-        <Button x:Name="DetailMovieButton" Content="Afficher les détails du film" HorizontalAlignment="Right" Margin="0,0,561,21" VerticalAlignment="Bottom" Width="144" Height="23"/>
-        <Button x:Name="LocationButton" Content="Louer Film" HorizontalAlignment="Left" Margin="199,0,0,21" VerticalAlignment="Bottom" Width="96" Height="24" Click="LocationButton_Click"/>
-        <DataGrid x:Name="FilmBdLocalDataGrid" Margin="0,30,10,66" HorizontalAlignment="Right" Width="435"/>
+        <Button x:Name="DetailMovieButton" Content="Afficher les détails du film" Margin="0,0,10,9" Grid.Row="1" HorizontalAlignment="Right" Width="144" Height="28" VerticalAlignment="Bottom"/>
+        <Button x:Name="LocationButton" Content="Louer Film" Margin="0,3,10,0" Click="LocationButton_Click" Grid.Row="1" HorizontalAlignment="Right" Width="96" Height="26" VerticalAlignment="Top"/>
+
+        <DataGrid x:Name="FilmBdLocalDataGrid" Margin="8,2,6,6.543" SelectionChanged="FilmBdLocalDataGrid_SelectionChanged" Grid.Row="2" CanUserReorderColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Column="8" Loaded="FilmBdLocalDataGrid_Loaded" AutoGenerateColumns="False" ItemsSource="{Binding MyMovieBDLocale}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Titre" Binding="{Binding Title}" />
+                <DataGridTextColumn Header="Titre original" Binding="{Binding Original_title}" />
+                <DataGridTextColumn Header="Durée" Binding="{Binding Runtime}" />
+                <DataGridTextColumn Header="Statut" Binding="{Binding Statut}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="GlobalMaxLabel" Content="/ 0" HorizontalAlignment="Left" Margin="476,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.609,0.8" Height="29" Grid.Row="1"/>
+        <Label x:Name="LocalMaxLabel" Content="/ 0" HorizontalAlignment="Left" Margin="476,11,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.609,0.8" Grid.Row="3"/>
+
+        <Button x:Name="GlobalPrevBT" Content="&lt;-" HorizontalAlignment="Left" Margin="377,13,0,27" Width="35" Click="GlobalPrevBT_Click" Grid.Row="1"/>
+        <Button x:Name="GlobalNextBT" Content="-&gt;" Margin="522,13,0,27" Click="GlobalNextBT_Click" Grid.Row="1" HorizontalAlignment="Left" Width="35" RenderTransformOrigin="2.798,0.504"/>
+        <Button x:Name="LocalPrevBT" Content="&lt;-" HorizontalAlignment="Left" Margin="377,11,0,7" Width="35" Click="LocalPrevBT_Click" Grid.Row="3"/>
+        <Button x:Name="LocalNextBT" Content="-&gt;" Margin="0,11,294,7" Click="LocalNextBT_Click" Grid.Row="3" HorizontalAlignment="Right" Width="35"/>
+        <Label x:Name="label1" Content="Fournisseur" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy" Content="Vidéothèque" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBox x:Name="LocalCurrent" HorizontalAlignment="Left" Height="23" Margin="444,15,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="27" TextChanged="LocalCurrent_TextChanged" Grid.Row="3" RenderTransformOrigin="0.669,0.967"/>
+        <TextBox x:Name="GlobalCurrent" HorizontalAlignment="Left" Height="25" Margin="444,18,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="27" TextChanged="GlobalCurrent_TextChanged" Grid.Row="1"/>
     </Grid>
 </Window>
