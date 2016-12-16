@@ -18,7 +18,7 @@ namespace SmartWCFService
         BLLBDFilmCentr BLLBDF;
         public SmartWCFService()
         {
-            BLLBDF = BLLBDF = new BLLBDFilmCentr("LAPTOP-IQTHKHPT\\SQLEXPRESS","FilmDB"); ;
+            BLLBDF = BLLBDF = new BLLBDFilmCentr("LEOPARDGK\\SQLEXPRESS","FilmDB"); ;
         }
 
         public SmartWCFService(String servername, String dbname)
@@ -127,6 +127,21 @@ namespace SmartWCFService
         public int SelectCountFilm()
         {
             return BLLBDF.SelectCountFilm();
+        }
+
+        public List<GenreDTO> SelectGenreFilm(int IDFilm)
+        {
+            return BLLBDF.SelectGenreFilm(IDFilm);
+        }
+
+        public List<ActeurDTO> SelectActeurFilm(int IDFilm)
+        {
+            return BLLBDF.SelectActeurFilm(IDFilm);
+        }
+
+        public List<RealisateurDTO> SelectRealisateurFilm(int IDFilm)
+        {
+            return BLLBDF.SelectRealisateurFilm(IDFilm);
         }
     }
 }

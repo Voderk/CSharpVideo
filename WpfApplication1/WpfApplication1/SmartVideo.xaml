@@ -31,7 +31,7 @@
         <ToolBar x:Name="toolBar" VerticalAlignment="Top" Height="30">
             <Button x:Name="button2" Content="News" Height="25.6" VerticalAlignment="Top" Width="75"/>
         </ToolBar>
-        <Button x:Name="DetailMovieButton" Content="Afficher les détails du film" Margin="0,0,10,9" Grid.Row="1" HorizontalAlignment="Right" Width="144" Height="28" VerticalAlignment="Bottom"/>
+        <Button x:Name="DetailMovieButton" Content="Afficher les détails du film" Margin="0,0,10,9" Grid.Row="1" HorizontalAlignment="Right" Width="144" Height="28" VerticalAlignment="Bottom" Click="DetailMovieButton_Click"/>
         <Button x:Name="LocationButton" Content="Louer Film" Margin="0,3,10,0" Click="LocationButton_Click" Grid.Row="1" HorizontalAlignment="Right" Width="96" Height="26" VerticalAlignment="Top"/>
 
         <DataGrid x:Name="FilmBdLocalDataGrid" Margin="8,2,6,6.543" SelectionChanged="FilmBdLocalDataGrid_SelectionChanged" Grid.Row="2" CanUserReorderColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Grid.Column="8" Loaded="FilmBdLocalDataGrid_Loaded" AutoGenerateColumns="False" ItemsSource="{Binding MyMovieBDLocale}">

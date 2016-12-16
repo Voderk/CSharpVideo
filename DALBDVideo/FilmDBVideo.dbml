@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_Videotheque_Liege" Class="FilmDBVideoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-IQTHKHPT\SQLEXPRESS;Initial Catalog=BD_Videotheque_Liege;Integrated Security=True" SettingsObjectName="DALBDVideo.Properties.Settings" SettingsPropertyName="BD_Videotheque_LiegeConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LEOPARDGK\SQLEXPRESS;Initial Catalog=BD_Videotheque_Liege;Integrated Security=True" SettingsObjectName="DALBDVideo.Properties.Settings" SettingsPropertyName="BD_Videotheque_LiegeConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BD_Actor" Member="BD_Actors">
     <Type Name="BD_Actor">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

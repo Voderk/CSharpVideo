@@ -18,7 +18,7 @@ namespace TestDAL
 
             //FilmDTO movie;
 
-            DALBDVid DALBDV = DALBDVid.Singleton("LAPTOP-IQTHKHPT\\SQLEXPRESS", "BD_VIDEOTHEQUE_LIEGE");
+            DALBDVid DALBDV = DALBDVid.Singleton("LEOPARDGK\\SQLEXPRESS", "BD_VIDEOTHEQUE_LIEGE");
             //ActeurDTO actor = new ActeurDTO(138, "Quentin Tarantino");
             MySmartWCFService.SmartWCFServiceClient test = new MySmartWCFService.SmartWCFServiceClient();
 

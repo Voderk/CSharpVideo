@@ -259,4 +259,46 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SelectGenreFilm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDFilm" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectGenreFilmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectGenreFilmResult" nillable="true" type="q22:ArrayOfGenreDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectActeurFilm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDFilm" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectActeurFilmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectActeurFilmResult" nillable="true" type="q23:ArrayOfActeurDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectRealisateurFilm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDFilm" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectRealisateurFilmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DTOFilm" minOccurs="0" name="SelectRealisateurFilmResult" nillable="true" type="q24:ArrayOfRealisateurDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

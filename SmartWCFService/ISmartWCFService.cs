@@ -73,6 +73,12 @@ namespace SmartWCFService
         [OperationContract]
         int SelectCountFilm();
 
+        [OperationContract]
+        List<GenreDTO> SelectGenreFilm(int IDFilm);
+        [OperationContract]
+        List<ActeurDTO> SelectActeurFilm(int IDFilm);
+        [OperationContract]
+        List<RealisateurDTO> SelectRealisateurFilm(int IDFilm);
 
     }
 

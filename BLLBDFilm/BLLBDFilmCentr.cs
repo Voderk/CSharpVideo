@@ -116,6 +116,22 @@ namespace BLLBDFilm
         {
             return DALBDF.SelectCountFilm();
         }
+
+        public List<ActeurDTO> SelectActeurFilm(int IDFilm)
+        {
+            return DALBDF.SelectActeurFilm(IDFilm);
+        }
+
+        public List<GenreDTO> SelectGenreFilm(int IDFilm)
+        {
+            List<GenreDTO> temp = DALBDF.SelectGenreFilm(IDFilm);
+            return temp;
+        }
+
+        public List<RealisateurDTO> SelectRealisateurFilm(int IDFilm)
+        {
+            return DALBDF.SelectRealisateurFilm(IDFilm);
+        }
         #endregion
 
         #region SelectFilmPerCategory
