@@ -26,7 +26,7 @@ namespace DALBDVideo.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-IQTHKHPT\\SQLEXPRESS;Initial Catalog=BD_Videotheque_Liege;Integ" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LEOPARDGK\\SQLEXPRESS;Initial Catalog=BD_Videotheque_Liege;Integ" +
             "rated Security=True;Pooling=False")]
         public string BD_Videotheque_LiegeConnectionString {
             get {
@@ -37,7 +37,7 @@ namespace DALBDVideo.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-IQTHKHPT\\SQLEXPRESS;Initial Catalog=BD_Videotheque_Waremme;Int" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LEOPARDGK\\SQLEXPRESS;Initial Catalog=BD_Videotheque_Waremme;Int" +
             "egrated Security=True;Pooling=False")]
         public string BD_Videotheque_WaremmeConnectionString {
             get {
@@ -59,7 +59,7 @@ namespace DALBDVideo.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-IQTHKHPT\\SQLEXPRESS;Initial Catalog=BD_Videotheque_Liege;Integ" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LEOPARDGK\\SQLEXPRESS;Initial Catalog=BD_Videotheque_Liege;Integ" +
             "rated Security=True")]
         public string BD_Videotheque_LiegeConnectionString2 {
             get {

@@ -30,6 +30,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartVideo", "WpfApplicatio
 		{4ACE513C-C258-459D-9FCC-49E9F29C5D27} = {4ACE513C-C258-459D-9FCC-49E9F29C5D27}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestImage", "TestImage\TestImage.csproj", "{FD6A402E-AE4D-4C32-B21A-C620892D13E9}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://www.test.etud", "http://www.test.etud", "{F32E00ED-720C-4A7D-A219-D7E81AEF068D}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/www.test.etud"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\test\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\www.test.etud\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/www.test.etud"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\test\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\www.test.etud\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\test\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +95,14 @@ Global
 		{A7230F3D-1701-4F6F-96E3-004E4BB0B6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7230F3D-1701-4F6F-96E3-004E4BB0B6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7230F3D-1701-4F6F-96E3-004E4BB0B6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6A402E-AE4D-4C32-B21A-C620892D13E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6A402E-AE4D-4C32-B21A-C620892D13E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6A402E-AE4D-4C32-B21A-C620892D13E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6A402E-AE4D-4C32-B21A-C620892D13E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32E00ED-720C-4A7D-A219-D7E81AEF068D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32E00ED-720C-4A7D-A219-D7E81AEF068D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32E00ED-720C-4A7D-A219-D7E81AEF068D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32E00ED-720C-4A7D-A219-D7E81AEF068D}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

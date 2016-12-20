@@ -191,6 +191,24 @@ namespace WpfApplication1.MyWCFService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectCountFilm", ReplyAction="http://tempuri.org/ISmartWCFService/SelectCountFilmResponse")]
         System.Threading.Tasks.Task<int> SelectCountFilmAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectGenreFilm", ReplyAction="http://tempuri.org/ISmartWCFService/SelectGenreFilmResponse")]
+        System.Collections.Generic.List<DTOFilm.GenreDTO> SelectGenreFilm(int IDFilm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectGenreFilm", ReplyAction="http://tempuri.org/ISmartWCFService/SelectGenreFilmResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.GenreDTO>> SelectGenreFilmAsync(int IDFilm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectActeurFilm", ReplyAction="http://tempuri.org/ISmartWCFService/SelectActeurFilmResponse")]
+        System.Collections.Generic.List<DTOFilm.ActeurDTO> SelectActeurFilm(int IDFilm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectActeurFilm", ReplyAction="http://tempuri.org/ISmartWCFService/SelectActeurFilmResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.ActeurDTO>> SelectActeurFilmAsync(int IDFilm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectRealisateurFilm", ReplyAction="http://tempuri.org/ISmartWCFService/SelectRealisateurFilmResponse")]
+        System.Collections.Generic.List<DTOFilm.RealisateurDTO> SelectRealisateurFilm(int IDFilm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/SelectRealisateurFilm", ReplyAction="http://tempuri.org/ISmartWCFService/SelectRealisateurFilmResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.RealisateurDTO>> SelectRealisateurFilmAsync(int IDFilm);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -370,6 +388,30 @@ namespace WpfApplication1.MyWCFService {
         
         public System.Threading.Tasks.Task<int> SelectCountFilmAsync() {
             return base.Channel.SelectCountFilmAsync();
+        }
+        
+        public System.Collections.Generic.List<DTOFilm.GenreDTO> SelectGenreFilm(int IDFilm) {
+            return base.Channel.SelectGenreFilm(IDFilm);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.GenreDTO>> SelectGenreFilmAsync(int IDFilm) {
+            return base.Channel.SelectGenreFilmAsync(IDFilm);
+        }
+        
+        public System.Collections.Generic.List<DTOFilm.ActeurDTO> SelectActeurFilm(int IDFilm) {
+            return base.Channel.SelectActeurFilm(IDFilm);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.ActeurDTO>> SelectActeurFilmAsync(int IDFilm) {
+            return base.Channel.SelectActeurFilmAsync(IDFilm);
+        }
+        
+        public System.Collections.Generic.List<DTOFilm.RealisateurDTO> SelectRealisateurFilm(int IDFilm) {
+            return base.Channel.SelectRealisateurFilm(IDFilm);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<DTOFilm.RealisateurDTO>> SelectRealisateurFilmAsync(int IDFilm) {
+            return base.Channel.SelectRealisateurFilmAsync(IDFilm);
         }
     }
 }

@@ -81,6 +81,20 @@ namespace BLLBDVideo
             return MyMovies;
         }
 
+        public List<ActeurDTO> SelectActeurFilm(int IDFilm)
+        {
+            return DALBDV.SelectActeurFilm(IDFilm);
+        }
+
+        public List<GenreDTO> SelectGenreFilm(int IDFilm)
+        {
+            return DALBDV.SelectGenreFilm(IDFilm);
+        }
+
+        public List<RealisateurDTO> SelectRealisateurFilm(int IDFilm)
+        {
+            return DALBDV.SelectRealisateurFilm(IDFilm);
+        }
 
         #endregion
 

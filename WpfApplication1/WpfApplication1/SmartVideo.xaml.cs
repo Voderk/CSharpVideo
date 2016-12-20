@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 using WpfApplication1.MyWCFService;
 using System.ComponentModel;
+using System.Windows.Media.Imaging;
 
 namespace SmartVideo
 {
@@ -20,7 +21,7 @@ namespace SmartVideo
         private int GlobalMax;
         int GlobalmaxPage, LocalmaxPage;
         List<FilmDTO> MyMovies, MyMovieBDLocale;
-
+        DetailsFilm DF = new DetailsFilm();
         
 
         public MainWindow()
@@ -32,7 +33,8 @@ namespace SmartVideo
             this.Visibility = Visibility.Hidden;
            
             LocationButton.IsEnabled = false;
-            
+            this.Icon = new BitmapImage(new System.Uri(@"../../icone-video-2.png",System.UriKind.Relative));
+                //(@"C:\Users\Gauvain Klug\CSharpVideo\WpfApplication1\WpfApplication1\icone-video-2.png", System.UriKind.Absolute));
 
         }
 
@@ -55,12 +57,8 @@ namespace SmartVideo
             MyMovies = AccessBD.SelectSomeMovies(50, int.Parse(GlobalCurrent.Text)-1);
             FilmDataGridView.ItemsSource = MyMovies;
             LocationButton.IsEnabled = true;
-            
-            
-            
                 
-            BLLVid = new BLLBDVid("LAPTOP-IQTHKHPT\\SQLEXPRESS", name_base);
-
+            BLLVid = new BLLBDVid("LEOPARDGK\\SQLEXPRESS", name_base);
 
             LocalMax = BLLVid.SelectCountFilm();
             LocalmaxPage = LocalMax / 50;
@@ -76,7 +74,7 @@ namespace SmartVideo
         private void LocationButton_Click(object sender, RoutedEventArgs e)
         {
             FilmDTO temp = (FilmDTO) FilmDataGridView.SelectedItem;
-            BLLVid = new BLLBDVid("LAPTOP-IQTHKHPT\\SQLEXPRESS", name_base);
+            BLLVid = new BLLBDVid("LEOPARDGK\\SQLEXPRESS", name_base);
 
             
             bool success = BLLVid.InsertNewFilm(temp);
@@ -164,7 +162,7 @@ namespace SmartVideo
             {
                 LocalNextBT.IsEnabled = true;
             }
-            BLLVid = new BLLBDVid("LAPTOP-IQTHKHPT\\SQLEXPRESS", name_base);
+            BLLVid = new BLLBDVid("LEOPARDGK\\SQLEXPRESS", name_base);
 
             MyMovieBDLocale = BLLVid.SelectSomeMovies(50, int.Parse(LocalCurrent.Text) - 1);
             //FilmBdLocalDataGrid.ItemsSource = MyMovieBDLocale;
@@ -208,7 +206,37 @@ namespace SmartVideo
             FilmDataGridView.Columns[8].Visibility = Visibility.Hidden;*/
         }
 
-        
+        private void DetailMovieButton_Click(object sender, RoutedEventArgs e)
+        {
+            FilmDTO temp = (FilmDTO)FilmDataGridView.SelectedItem;
+            if (temp == null)
+            {
+                temp = (FilmDTO)FilmBdLocalDataGrid.SelectedItem;
+                if(temp == null)
+                {
+                    MessageBox.Show("Aucun Film Sélectionné");
+                }
+                else
+                {
+                    BLLVid = new BLLBDVid("LEOPARDGK\\SQLEXPRESS", name_base);
+                    DF.Film = temp;
+                    DF.FilmListActeurs = BLLVid.SelectActeurFilm(temp.Id);
+                    DF.FilmListGenre = BLLVid.SelectGenreFilm(temp.Id);
+                    DF.FilmListRealisateurs = BLLVid.SelectRealisateurFilm(temp.Id);
+                    DF.Show();
+                    DF.Focus();
+                }
+            }
+            else
+            {
+                DF.Film = temp;
+                DF.FilmListActeurs = AccessBD.SelectActeurFilm(temp.Id);
+                DF.FilmListGenre = AccessBD.SelectGenreFilm(temp.Id);
+                DF.FilmListRealisateurs = AccessBD.SelectRealisateurFilm(temp.Id);
+                DF.Show();
+                DF.Focus();
+            }
+        }
 
         private void LocalNextBT_Click(object sender, RoutedEventArgs e)
         {

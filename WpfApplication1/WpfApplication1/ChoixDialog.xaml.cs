@@ -25,7 +25,7 @@ namespace SmartVideo
         {
             InitializeComponent();
             parent = d;
-
+            this.Icon = new BitmapImage(new System.Uri(@"../../icone-video-2.png", System.UriKind.Relative));
         }
 
         private void OkSiteButton_Click(object sender, RoutedEventArgs e)
